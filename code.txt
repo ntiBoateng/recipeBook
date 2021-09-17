@@ -1,0 +1,49 @@
+$ git add chili.txt
+$ git add squash-lasagna.txt
+$ ls
+chili.txt       new-recipe.txt
+margherita.txt  squash-lasagna.txt
+$ git add .
+$ git commit -m "Changes has been made"
+[master 2028e32] Changes has been made
+ 2 files changed, 4 insertions(+)
+$ cd ../veggie-clone
+$ git fetch
+remote: Counting objects: 13, done.
+remote: Compressing objects:   7% (1/13)  remote: Compressing objects:  15% (2/13)  remote: Compressing objects:  23% (3/13)  remote: Compressing objects:  30% (4/13)  remote: Compressing objects:  38% (5/13)  remote: Compressing objects:  46% (6/13)  remote: Compressing objects:  53% (7/13)  remote: Compressing objects:  61% (8/13)  remote: Compressing objects:  69% (9/13)  remote: Compressing objects:  76% (10/13) remote: Compressing objects:  84% (11/13) remote: Compressing objects:  92% (12/13) remote: Compressing objects: 100% (13/13) remote: Compressing objects: 100% (13/13), done.
+remote: Total 13 (delta 7), reused 0 (delta 0)
+Unpacking objects: 100% (13/13), done.
+From /home/ccuser/workspace/recipe-book-a/veggie-favorites
+ * [new branch]      master     -> origin/master
+$ git merge origin/master
+Updating 4681ee4..2028e32
+Fast-forward
+ chili.txt          | 16 +++++++++-------
+ margherita.txt     | 11 +++++++----
+ squash-lasagna.txt |  5 ++++-
+ 3 files changed, 20 insertions(+), 12 deletions(-)
+$ git branch all-recipes
+$ git checkout all-recipes
+Switched to branch 'all-recipes'
+$ git add new-recipe.txt
+$ ls
+chili.txt       new-recipe.txt
+margherita.txt  squash-lasagna.txt
+$ git commit -m "new recipes has been added"
+[all-recipes eddcd80] new recipes has been added
+ 1 file changed, 5 insertions(+)
+$ git fetch
+$ git push origin all-recipes
+Counting objects: 3, done.
+Delta compression using up to 16 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 316 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To /home/ccuser/workspace/recipe-book-a/veggie-favorites
+ * [new branch]      all-recipes -> all-recipes
+$ cd ../veggie-favorites
+$ git branch
+  all-recipes
+* master
+$ ^C
+$ 
